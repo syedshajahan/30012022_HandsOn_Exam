@@ -13,11 +13,13 @@ namespace BookRecomendationDataAccessLayer
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required.
     public class BookRecomendationDAL
     {
-        SqlConnection connectionString;
+        SqlConnection connectionObject;
         BookRecomendationContext contextObject;
+        SqlCommand commandObject;
         public BookRecomendationDAL()
         {
-            connectionString = new SqlConnection(ConfigurationManager.ConnectionStrings["BookRecomendationString"].ConnectionString);
+            connectionObject = new SqlConnection(ConfigurationManager.ConnectionStrings["BookRecomendationString"].ConnectionString);
+            contextObject = new BookRecomendationContext();
         }
 
         public List<BookDTO> FetchReviewsForBook(string bookName)
@@ -52,8 +54,37 @@ namespace BookRecomendationDataAccessLayer
             }
         }
 
-        public void SaveReviewForBookToDB()
+        public void SaveReviewForBookToDB(BookDTO bookDtoObject)
         {
+            try
+            {
+                commandObject = new SqlCommand();
+                commandObject.CommandText = "uspAddNewDept";
+                commandObject.CommandType = System.Data.CommandType.StoredProcedure;
+                commandObject.Connection = connectionObject;
+                commandObject.Parameters.AddWithValue("@book_isbn", newDeptObj.DeptName);
+                commandObject.Parameters.AddWithValue("@deptGroupName", newDeptObj.DeptGroupName);
+                commandObject.Parameters.AddWithValue("@deptDate", System.DateTime.Now);
+
+                SqlParameter prcReturnValue = new SqlParameter();
+                prcReturnValue.Direction = ParameterDirection.ReturnValue;
+                prcReturnValue.SqlDbType = SqlDbType.Int;
+                cmdObj.Parameters.Add(prcReturnValue);
+
+                conObj.Open();
+                cmdObj.ExecuteNonQuery();
+                newDeptId = Convert.ToInt32(prcDeptIDOut.Value);
+                return Convert.ToInt32(prcReturnValue.Value);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                connectionObject.Close();
+            }
         }
 
 }

@@ -11,17 +11,17 @@ namespace BookRecomendationBusinessLayer
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required. 
     public class BookRecomendationBL
     {
-        BookRecomendationDAL dalObj;
+        BookRecomendationDAL dalObject;
         public BookRecomendationBL()
         {
-            dalObj = new BookRecomendationDAL();
+            dalObject = new BookRecomendationDAL();
         }
 
         public List<BookDTO> ShowReviewsForBook(string bookName)
         {
             try
             {
-                List<BookDTO> lstBookDetails = dalObj.FetchReviewsForBook(bookName);
+                List<BookDTO> lstBookDetails = dalObject.FetchReviewsForBook(bookName);
                 return lstBookDetails;
             }
             catch (Exception ex)
@@ -30,11 +30,17 @@ namespace BookRecomendationBusinessLayer
                 throw ex;
             }
         }
-
-
-        public void AddReviewForBook()
+        public int AddReviewForBook(BookDTO bookDtoObject)
         {
-          
+            try
+            {
+                return dalObject.SaveReviewForBookToDB(bookDtoObject);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
       
     }

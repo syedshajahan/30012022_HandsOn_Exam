@@ -32,3 +32,17 @@ C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRec
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.CopyComplete
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.dll
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.pdb
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\BookRecomendationDataAccessLayer.dll.config
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\BookRecomendationDataAccessLayer.dll
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\BookRecomendationDataAccessLayer.pdb
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\BookRecomendationDTO.dll
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\BookRecomendationDTO.pdb
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.CopyComplete
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.dll
+C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.pdb

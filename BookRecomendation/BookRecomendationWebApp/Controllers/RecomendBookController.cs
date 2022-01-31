@@ -15,21 +15,69 @@ namespace BookRecomendationWebApp.Controllers
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required.
     public class RecomendBookController : Controller
     {
+        BookRecomendationBL blObject;
+        public RecomendBookController()
+        {
+            blObject = new BookRecomendationBL();
+        }
         // GET: RecomendBook
         public ActionResult Index()
         {
             return View();
         }
-        public void AddReviews()
-        {
-
-        }
-        public async Task<ActionResult> DisplayResultsUsingWebAPIAsync()
+        [HttpGet]
+        public ActionResult AddReviews()
         {
             try
             {
-                string baseURL = $"https://localhost:44304/";
-                string routeURL = $"api/BookReviews/GetRatingsForBook";
+                try
+                {
+                    return View();
+                }
+                catch (Exception ex)
+                {
+
+                    return View("Error");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return View("Error");
+            }
+        }
+        [HttpPost]
+        public ActionResult AddReviews(BookViewModel bookReviewDetails)
+        {
+            try
+            {
+                BookDTO bookDtoObject = new BookDTO();
+                bookDtoObject.title = bookReviewDetails.title;
+                bookDtoObject.rating = bookReviewDetails.rating;
+                bookDtoObject.review1 = bookReviewDetails.review1;
+                int retVal = blObject.AddReviewForBook(bookDtoObject);
+                if (retVal == 1)
+                {
+                    return RedirectToAction("DisplayResultsUsingWebAPIAsync");
+                }
+                else
+                {
+                    return View("Error");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return View("Error");
+            }
+        }
+        [HttpGet]
+        public async Task<ActionResult> DisplayResultsUsingWebAPIAsync(string bookName)
+        {
+            try
+            {
+                string baseURL = $"http://localhost:60398/";
+                string routeURL = $"api/BookReviews/GetRatingsForBook/{bookName}";
                 var apiClient = new HttpClient();
                 apiClient.BaseAddress = new Uri(baseURL);
                 apiClient.DefaultRequestHeaders.Clear();
@@ -52,5 +100,6 @@ namespace BookRecomendationWebApp.Controllers
                 return View("Error");
             }
         }
+
     }
 }

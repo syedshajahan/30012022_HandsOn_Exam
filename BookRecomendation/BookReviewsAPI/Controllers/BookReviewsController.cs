@@ -12,10 +12,10 @@ namespace BookReviewsAPI.Controllers
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required.
     public class BookReviewsController : ApiController
     {
-        BookRecomendationBL blObj;
+        BookRecomendationBL blObject;
         public BookReviewsController()
         {
-            blObj = new BookRecomendationBL();
+            blObject = new BookRecomendationBL();
         }
 
         [HttpGet]
@@ -23,7 +23,7 @@ namespace BookReviewsAPI.Controllers
         {
             try
             {
-                List<BookDTO> listOfBookRatings = blObj.ShowReviewsForBook(bookName);
+                List<BookDTO> listOfBookRatings = blObject.ShowReviewsForBook(bookName);
                 if (listOfBookRatings.Count > 0)
                     return Request.CreateResponse(HttpStatusCode.OK, listOfBookRatings);
                 else
