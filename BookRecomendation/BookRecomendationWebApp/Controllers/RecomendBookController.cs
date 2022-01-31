@@ -47,12 +47,12 @@ namespace BookRecomendationWebApp.Controllers
             }
         }
         [HttpPost]
-        public ActionResult AddReviews(BookViewModel bookReviewDetails)
+        public ActionResult AddReviews(BookReview bookReviewDetails)
         {
             try
             {
                 BookDTO bookDtoObject = new BookDTO();
-                bookDtoObject.title = bookReviewDetails.title;
+                bookDtoObject.book_isbn = bookReviewDetails.book_isbn;
                 bookDtoObject.rating = bookReviewDetails.rating;
                 bookDtoObject.review1 = bookReviewDetails.review1;
                 int retVal = blObject.AddReviewForBook(bookDtoObject);

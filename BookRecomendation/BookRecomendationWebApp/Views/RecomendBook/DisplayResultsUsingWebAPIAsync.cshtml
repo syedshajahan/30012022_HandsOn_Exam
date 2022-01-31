@@ -1,4 +1,4 @@
-﻿@model BookRecomendationWebApp.Models.BookViewModel
+﻿@model IEnumerable<BookRecomendationWebApp.Models.BookViewModel>
 
 @{
     ViewBag.Title = "DisplayResultsUsingWebAPIAsync";
@@ -7,37 +7,39 @@
 
 <h2>DisplayResultsUsingWebAPIAsync</h2>
 
-<div>
-    <h4>BookViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.review1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.review1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.rating)
-        </dd>
-
-    </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.review1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.review1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rating)
+        </td>
+        <td>
+            @Html.ActionLink("Review", "AddReviews", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

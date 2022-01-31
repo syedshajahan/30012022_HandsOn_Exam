@@ -28,7 +28,7 @@ namespace BookRecomendationDataAccessLayer
             {
                 var listOfBookReviews = (from book in contextObject.Books
                                          from bookReview in book.Reviews
-                                         where book.title == bookName && book.book_isbn == bookReview.book_isbn
+                                         where book.title.Contains(bookName) && book.book_isbn == bookReview.book_isbn
                                          select new
                                          {
                                              book.title,
@@ -54,26 +54,25 @@ namespace BookRecomendationDataAccessLayer
             }
         }
 
-        public void SaveReviewForBookToDB(BookDTO bookDtoObject)
+        public int SaveReviewForBookToDB(BookDTO bookDtoObject)
         {
             try
             {
                 commandObject = new SqlCommand();
-                commandObject.CommandText = "uspAddNewDept";
+                commandObject.CommandText = "uspAddReview";
                 commandObject.CommandType = System.Data.CommandType.StoredProcedure;
                 commandObject.Connection = connectionObject;
-                commandObject.Parameters.AddWithValue("@book_isbn", newDeptObj.DeptName);
-                commandObject.Parameters.AddWithValue("@deptGroupName", newDeptObj.DeptGroupName);
-                commandObject.Parameters.AddWithValue("@deptDate", System.DateTime.Now);
+                commandObject.Parameters.AddWithValue("@book_isbn", bookDtoObject.book_isbn);
+                commandObject.Parameters.AddWithValue("@rating", bookDtoObject.rating);
+                commandObject.Parameters.AddWithValue("@review", bookDtoObject.review1);
 
                 SqlParameter prcReturnValue = new SqlParameter();
                 prcReturnValue.Direction = ParameterDirection.ReturnValue;
                 prcReturnValue.SqlDbType = SqlDbType.Int;
-                cmdObj.Parameters.Add(prcReturnValue);
+                commandObject.Parameters.Add(prcReturnValue);
 
-                conObj.Open();
-                cmdObj.ExecuteNonQuery();
-                newDeptId = Convert.ToInt32(prcDeptIDOut.Value);
+                connectionObject.Open();
+                commandObject.ExecuteNonQuery();
                 return Convert.ToInt32(prcReturnValue.Value);
             }
             catch (Exception ex)

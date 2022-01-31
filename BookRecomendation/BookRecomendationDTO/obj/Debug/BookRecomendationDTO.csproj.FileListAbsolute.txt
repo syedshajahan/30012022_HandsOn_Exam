@@ -18,7 +18,6 @@ C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRec
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDTO\obj\Debug\BookRecomendationDTO.pdb
 C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\bin\Debug\BookRecomendationDTO.dll
 C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\bin\Debug\BookRecomendationDTO.pdb
-C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\obj\Debug\BookRecomendationDTO.csproj.AssemblyReference.cache
 C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\obj\Debug\BookRecomendationDTO.csproj.CoreCompileInputs.cache
 C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\obj\Debug\BookRecomendationDTO.dll
 C:\Users\shajs\Documents\Modules\ASPNET\40020490\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDTO\obj\Debug\BookRecomendationDTO.pdb
