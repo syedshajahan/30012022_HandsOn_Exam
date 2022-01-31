@@ -66,14 +66,14 @@ namespace BookRecomendationDataAccessLayer
                 commandObject.Parameters.AddWithValue("@rating", bookDtoObject.rating);
                 commandObject.Parameters.AddWithValue("@review", bookDtoObject.review1);
 
-                SqlParameter prcReturnValue = new SqlParameter();
-                prcReturnValue.Direction = ParameterDirection.ReturnValue;
-                prcReturnValue.SqlDbType = SqlDbType.Int;
-                commandObject.Parameters.Add(prcReturnValue);
+                SqlParameter returnValue = new SqlParameter();
+                returnValue.Direction = ParameterDirection.ReturnValue;
+                returnValue.SqlDbType = SqlDbType.Int;
+                commandObject.Parameters.Add(returnValue);
 
                 connectionObject.Open();
                 commandObject.ExecuteNonQuery();
-                return Convert.ToInt32(prcReturnValue.Value);
+                return Convert.ToInt32(returnValue.Value);
             }
             catch (Exception ex)
             {

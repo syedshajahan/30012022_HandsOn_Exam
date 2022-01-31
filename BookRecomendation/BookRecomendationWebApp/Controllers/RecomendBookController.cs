@@ -55,8 +55,8 @@ namespace BookRecomendationWebApp.Controllers
                 bookDtoObject.book_isbn = bookReviewDetails.book_isbn;
                 bookDtoObject.rating = bookReviewDetails.rating;
                 bookDtoObject.review1 = bookReviewDetails.review1;
-                int retVal = blObject.AddReviewForBook(bookDtoObject);
-                if (retVal == 1)
+                int returnValue = blObject.AddReviewForBook(bookDtoObject);
+                if (returnValue == 1)
                 {
                     return RedirectToAction("DisplayResultsUsingWebAPIAsync");
                 }
