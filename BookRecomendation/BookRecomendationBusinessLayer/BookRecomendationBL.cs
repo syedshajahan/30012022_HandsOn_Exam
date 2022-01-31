@@ -11,11 +11,24 @@ namespace BookRecomendationBusinessLayer
     //DO NOT MODIFY THE METHOD NAMES : Adding of parameters / changing the return types of the given methods may be required. 
     public class BookRecomendationBL
     {
-
-
-        public void ShowReviewsForBook()
+        BookRecomendationDAL dalObj;
+        public BookRecomendationBL()
         {
-           
+            dalObj = new BookRecomendationDAL();
+        }
+
+        public List<BookDTO> ShowReviewsForBook(string bookName)
+        {
+            try
+            {
+                List<BookDTO> lstBookDetails = dalObj.FetchReviewsForBook(bookName);
+                return lstBookDetails;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
 

@@ -19,15 +19,15 @@ namespace BookReviewsAPI.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetRatingsForBook()
+        public HttpResponseMessage GetRatingsForBook(string bookName)
         {
             try
             {
-                List<BookDTO> lstOfDept = blObj.();
-                if (lstOfDept.Count > 0)
-                    return Request.CreateResponse(HttpStatusCode.OK, lstOfDept);
+                List<BookDTO> listOfBookRatings = blObj.ShowReviewsForBook(bookName);
+                if (listOfBookRatings.Count > 0)
+                    return Request.CreateResponse(HttpStatusCode.OK, listOfBookRatings);
                 else
-                    return Request.CreateResponse(HttpStatusCode.OK, "No Dept Details");
+                    return Request.CreateResponse(HttpStatusCode.OK, "No Book Details Available");
             }
             catch (Exception ex)
             {
